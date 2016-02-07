@@ -30,10 +30,10 @@
                                                     <td class=" ">{{$categoria->nombre}}</td>
                                                     <td class=" last"><img src='{{asset($categoria->imagen)}}' class="thumb" height="42" width="42" alt="a picture"></td>
                                                     <td class=" last">
-                                                    {{ Form::open(array('url' => '/categorias/' . $categoria->id)) }} 
+                                                    {{ Form::open(array('url' => '/categorias/' . $categoria->id, 'id' => 'frm'.$categoria->id)) }} 
                                                         {{ Form::hidden('_method', 'DELETE') }}
                                                             <a href="{{ URL::to('categorias/' . $categoria->id . '/edit') }}" class="btn btn-success">Editar</a>
-                                                        {{ Form::submit('Eliminar', array('class' => 'btn btn-danger')) }}
+                                                        {{ Form::button('Eliminar', array('class' => 'btn btn-danger', 'onclick' => 'myFunction('.$categoria->id.')')) }}
                                                     {{ Form::close() }}
                                                     </td>
                                                 </tr>
@@ -106,6 +106,20 @@
                     }
                 });
             });
+            function myFunction(id){
+                swal({
+                  title: "Estas seguro de eliminar?",
+                  text: "el registro no podra recuperarse",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Si, Eliminar",
+                  closeOnConfirm: true
+                },
+                function(){        
+                    $( "#frm"+id).submit();
+                });
+            };
         </script>
 
 @stop

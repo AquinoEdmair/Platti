@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/datatables/tools/css/dataTables.tableTools.css')}}">
 
     <script type="text/javascript" src="{{URL::asset('js/jquery.min.js')}}"></script>
-
+    <link rel="stylesheet" href="{{URL::asset('css/sweet-alert.css')}}">
 
 </head>
 
@@ -111,6 +111,7 @@
         <!-- icheck -->
         <script type="text/javascript" src="{{URL::asset('js/icheck/icheck.min.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/custom.js')}}"></script>
+        <script type="text/javascript" src="{{URL::asset('js/sweet-alert.min.js')}}"></script>
 
         @yield('scripts')
 
