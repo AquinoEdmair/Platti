@@ -19,8 +19,9 @@ class AdminController extends BaseController
    {
       $servicios = Mesa::where('activo',1)->orderBy('nombre')->with('estatusmesas')->with('pedido')->get();
       $html = "";
-      $total=0;
+      
         foreach ($servicios as $servicio) {
+        
         $html .='<div class="col-md-3 col-sm-3 col-xs-12" id ="'.$servicio->id.'">';     
                     $html .='<td style="padding-right:5px;">';
                         if($servicio->asignacion==0)
@@ -43,6 +44,7 @@ class AdminController extends BaseController
                                 $html .='<br>';
                                 if($servicio->pedido)
                                 $html .='$ '.$servicio->pedido->total;
+
                                 else
                                 $html .='$ 0.000';
                                 $html .='<br>';
@@ -53,7 +55,7 @@ class AdminController extends BaseController
                 $html .='</td>';
             $html .='</div>';
         }
-        return \Response::json(['error' => 'false', 'msg' => $html , 'status' => '200'], 200);
+        return \Response::json(['error' => 'false' ,'msg' => $html , 'status' => '200'], 200);
    }
     public function obtieneMesas()
     {
@@ -131,7 +133,7 @@ class AdminController extends BaseController
                 .'</form>';
             }
         }
-        return \Response::json(['error' => 'false', 'msg' => $html, 'msg2' => $html2 , 'status' => '200'], 200);
+        return \Response::json(['error' => 'false' , 'msg' => $html, 'msg2' => $html2 , 'status' => '200'], 200);
     }
 
     public function pedidosMesalaravel($id)
@@ -139,10 +141,12 @@ class AdminController extends BaseController
         $mesa = Mesa::where('id',$id)->where('estatusmesas_id',2)->where('activo',1)->with('estatusmesas')->with('pedidos')->first();
         $html = "";
         $html2 = "";
+        $total=0;
         if($mesa->pedido){
             if($mesa->pedido->detallespedidostodos){
 
                 foreach ($mesa->pedido->detallespedidostodos as $detalle) {
+                    $total = $total+$detalle->subtotal;
                     $html .='<div class="media">'
                                 .'<div class="media-left">'
                                     .'<a href="#">'
@@ -181,7 +185,7 @@ class AdminController extends BaseController
             $html2 .='<ul class="list-group pedidosLista">'
             .'<li class="list-group-item">'
             .'<font color="black"><div class="text-right"><strong><td>Cuenta Total: &nbsp;</font></td></strong>' 
-            .'<font color="red" size="4px"><strong><td>$250000</font></td></strong>'
+            .'<font color="red" size="4px"><strong><td>$'.$total.'</font></td></strong>'
             .'</div>'
             .'</li>'
             .'</ul>'

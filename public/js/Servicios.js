@@ -8,7 +8,7 @@ function Modales()
 	      url: url,  
 	      cache: false,
 	      dataType: 'json',
-	      success: function(data) { 
+	      success: function(data) { 	      	
 	          $('#notificaciones_pedidos').html(data['msg']);
 	          $('#notificaciones_pedidos_submit').html(data['msg2']);
 	          $('#myModalNotificaciones').modal('show');
@@ -25,6 +25,7 @@ function Modales()
 	      cache: false,
 	      dataType: 'json',
 	      success: function(data) { 
+	      	  
 	          $('#pedidos_detalle').html(data['msg']);
 	          $('#pedidos_detalle_submit').html(data['msg2']);
 	          $('#myModalPedidos').modal('show');
