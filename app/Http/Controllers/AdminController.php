@@ -19,6 +19,7 @@ class AdminController extends BaseController
    {
       $servicios = Mesa::where('activo',1)->orderBy('nombre')->with('estatusmesas')->with('pedido')->get();
       $html = "";
+      $total=0;
         foreach ($servicios as $servicio) {
         $html .='<div class="col-md-3 col-sm-3 col-xs-12" id ="'.$servicio->id.'">';     
                     $html .='<td style="padding-right:5px;">';

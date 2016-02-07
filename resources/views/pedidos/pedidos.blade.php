@@ -33,9 +33,10 @@
                                                     <td class=" ">{{$pedido->created_at}}</td>
                                                     <td class=" ">{{$pedido->estatuspedido->descripcion}}</td>
                                                     <td class=" ">{{$pedido->total}}</td>
-                                                    <td class=" last">
-                                                        <a href="pedidosCajalaravel/{{$pedido->id}}" data-toggle="modal" class="btn btn-success verPedidos" style="cursor:pointer">Detalle</a>
-                                                        <a href="cancelarPedidos/{{$pedido->id}}" data-toggle="modal" class="btn btn-danger" style="cursor:pointer">Cancelar</a>
+                                                    <td class="last">
+                                                        <a href="pedidosCajalaravel/{{$pedido->id}}" class="btn btn-success verPedidos" style="cursor:pointer">Detalle</a>
+                                                        <!--<a href="cancelarPedidos/{{$pedido->id}}"  class="btn btn-danger" style="cursor:pointer">Cancelar</a>-->
+                                                        <a  onclick="RedirectToCancelar({{$pedido->id}})" id="a{{$pedido->id}}"  class="btn btn-danger" style="cursor:pointer">Cancelar</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -76,6 +77,7 @@
         <!-- Datatables -->
         <script type="text/javascript" src="{{URL::asset('js/datatables/js/jquery.dataTables.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/datatables/tools/js/dataTables.tableTools.js')}}"></script>
+        <script type="text/javascript" src="{{URL::asset('js/functions.js')}}"></script>
 
         <script>
             $(document).ready(function () {
