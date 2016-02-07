@@ -6386,3 +6386,9 @@ div .swatch a i{
 .badge{
     background-color: #0095fe;
 }
+
+
+.modalScroll{
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}

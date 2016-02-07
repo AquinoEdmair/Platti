@@ -27,7 +27,7 @@ class AdminController extends BaseController
                         else if($servicio->asignacion==1)
                             if($servicio->estatusmesas_id==1)
                                $html .='<div class="swatch swatchDisponible">';
-                            else if($servicio->estatusmesas_id==2)
+                            else if($servicio->estatusmesas_id==2) 
                                $html .='<div class="swatch swatchOcupada">';   
                             $html .='<br>';
                                 $html .=$servicio->nombre;
@@ -134,7 +134,8 @@ class AdminController extends BaseController
             if($mesa->pedido->detallespedidostodos){
 
                 foreach ($mesa->pedido->detallespedidostodos as $detalle) {
-                    $html .='<div class="media">'
+                    $html .='<div class="ventanaModal">'
+                    .'<div class="media">'
                                 .'<div class="media-left">'
                                     .'<a href="#">'
                                         .'<img class="media-object" src="'.$detalle->producto->imagen_principal.'" class="thumb" height="75" width="75" alt="a picture">'
@@ -164,6 +165,7 @@ class AdminController extends BaseController
                                         .'</li>' 
                                     .'</ul>'
                                 .'</div>'
+                            .'</div>'
                             .'</div>';
                 }
                 
