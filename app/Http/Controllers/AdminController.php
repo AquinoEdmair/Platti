@@ -189,6 +189,10 @@ class AdminController extends BaseController
             .'</div>'
             .'</li>'
             .'</ul>'
+            .'<ul class="nav nav-tabs nav-justified">
+              <li role="presentation" class="active" id="login-form-link"><a href="#">Pago en Efectivo</a></li>
+              <li role="presentation"><a href="#">Pago con Tarjeta</a></li>
+              </ul>'
             .'<ul class="list-group calcularCambio">
               <div class="input-group">
               <input type="text" class="form-control" placeholder="Cantidad con la que pagaron...">
