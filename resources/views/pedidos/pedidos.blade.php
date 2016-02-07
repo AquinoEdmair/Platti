@@ -74,9 +74,8 @@
                   </div>
                 </div>
 @stop
-
 @section('scripts')
-
+        <script type="text/javascript" src="{{URL::asset('js/Servicios.js')}}"></script>
         <!-- Datatables -->
         <script type="text/javascript" src="{{URL::asset('js/datatables/js/jquery.dataTables.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/datatables/tools/js/dataTables.tableTools.js')}}"></script>
