@@ -6366,6 +6366,13 @@ ul.notifications {
     background-color: #555;
 }
 
+.swatchEspera{
+    width:120px;
+    height:120px;
+    border-radius:5px;
+    background-color: #FFFF00;
+}
+
 
 div .swatch{
     color:#fff;
@@ -6391,4 +6398,14 @@ div .swatch a i{
 .modalScroll{
     max-height: calc(100vh - 210px);
     overflow-y: auto;
+}
+
+.modal-body{
+    height: 250px;
+}
+
+.pedidosLista{
+    width: 200px;
+    height: 50px;
+    margin-left: 370px;
 }

@@ -28,6 +28,7 @@
                                           </div>
                                           <div class="modalScroll">
                                           <div class="modal-body" id="notificaciones_pedidos">
+                                          <div align="left">TOTAL:</div>
                                           </div>
 
                                           </div>

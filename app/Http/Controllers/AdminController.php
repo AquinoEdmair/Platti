@@ -134,8 +134,7 @@ class AdminController extends BaseController
             if($mesa->pedido->detallespedidostodos){
 
                 foreach ($mesa->pedido->detallespedidostodos as $detalle) {
-                    $html .='<div class="ventanaModal">'
-                    .'<div class="media">'
+                    $html .='<div class="media">'
                                 .'<div class="media-left">'
                                     .'<a href="#">'
                                         .'<img class="media-object" src="'.$detalle->producto->imagen_principal.'" class="thumb" height="75" width="75" alt="a picture">'
@@ -165,13 +164,26 @@ class AdminController extends BaseController
                                         .'</li>' 
                                     .'</ul>'
                                 .'</div>'
-                            .'</div>'
                             .'</div>';
                 }
                 
             }
             if($mesa->pedido){
-            $html2 .='<form action="toPayByMesa" method="post">'       
+            $html2 .='<ul class="list-group pedidosLista">'
+            .'<li class="list-group-item">'
+            .'<font color="black"><div class="text-right"><strong><td>Cuenta Total: &nbsp;</font></td></strong>' 
+            .'<font color="red" size="4px"><strong><td>$2500</font></td></strong>'
+            .'</div>'
+            .'</li>'
+            .'</ul>'
+            .'<ul class="list-group">
+            <div class="input-group">
+      <input type="text" class="form-control" placeholder="Cantidad con la que pagaron...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Calcular Cambio</button>
+      </span>
+            </ul>'
+            .'<form action="toPayByMesa" method="post">'       
                 .'<input type="hidden" name="id_mesa" value="'.$id.'">'
                 .'<input type="hidden" name="id_pedido" value="'.$mesa->pedido->id.'">'
                 .'<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>'
