@@ -34,11 +34,8 @@
                                                     <td class=" ">{{$pedido->estatuspedido->descripcion}}</td>
                                                     <td class=" ">{{$pedido->total}}</td>
                                                     <td class=" last">
-                                                    {{ Form::open(array('url' => '/cancelarPedidos/' . $pedido->id)) }} 
-                                                        {{ Form::hidden('_method', 'Cancelar') }}
-                                                                <a href="pedidosCajalaravel/{{$pedido->id}}" data-toggle="modal" class="btn btn-success verPedidos" style="cursor:pointer">Detalle</a>
-                                                      {{ Form::submit('Cancelar', array('class' => 'btn btn-danger')) }}
-                                                    {{ Form::close() }}
+                                                        <a href="pedidosCajalaravel/{{$pedido->id}}" data-toggle="modal" class="btn btn-success verPedidos" style="cursor:pointer">Detalle</a>
+                                                        <a href="cancelarPedidos/{{$pedido->id}}" data-toggle="modal" class="btn btn-danger" style="cursor:pointer">Cancelar</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
