@@ -116,7 +116,8 @@
                   confirmButtonText: "Si, Eliminar",
                   closeOnConfirm: true
                 },
-                function(){        
+                function(){ 
+                    $( "#frm"+id).hide();  
                     $( "#frm"+id).submit();
                 });
             };
