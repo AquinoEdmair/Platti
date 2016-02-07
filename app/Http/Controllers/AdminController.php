@@ -208,7 +208,7 @@ class AdminController extends BaseController
         $mesa->save();
 
         $pedido = Pedido::find($id_pedido);
-        $pedido->estatuspedidos_id = 2;
+        $pedido->estatuspedidos_id = 3;
         $pedido->save();
 
         //Imprimir Ticket
