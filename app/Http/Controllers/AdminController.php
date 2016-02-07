@@ -263,5 +263,11 @@ class AdminController extends BaseController
         return \Response::json(['error' => 'false', 'msg' => $html , 'status' => '200'], 200);
     }
 
-
+    public function cancelarPedidos($id)
+    {
+        $Pedidos = Pedido::find($id);
+        $Pedidos->activo = 0;
+        $Pedidos->save();     
+        return redirect('pedidos');
+    }
 }
