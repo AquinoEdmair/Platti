@@ -48,4 +48,5 @@ Route::get('pedidosCajalaravel/{id}', 'AdminController@pedidosCajalaravel');
 Route::get('cancelarPedidos/{id}', 'AdminController@cancelarPedidos');
 Route::post('agregarPedido', 'AdminController@agregarPedido');
 Route::post('agregarProductos', 'AdminController@agregarProductos');
+Route::post('terminarPedido', 'AdminController@terminarPedido');
 

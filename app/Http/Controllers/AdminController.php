@@ -343,4 +343,15 @@ class AdminController extends BaseController
 
         return \Response::json(['error' => 'false', 'msg' => "Se ha guardado correctamente", 'status' => '200'], 200);
     }
+
+    public function terminarPedido(Request $request)
+    {
+        $id_pedido = $request->pedido_id;
+
+        $pedido = Pedido::find($id_pedido);
+        $pedido->estatuspedidos_id = 2;
+        $pedido->save();
+
+        return \Response::json(['error' => 'false', 'msg' => "Se finalizado correctamente", 'status' => '200'], 200);
+    }
 }
