@@ -30,10 +30,10 @@
                                                     <td class=" ">{{$usuario->nombre}}</td>
                                                     <td class=" ">{{$usuario->usuario}}</td>
                                                     <td class=" last">
-                                                    {{ Form::open(array('url' => '/usuarios/' . $usuario->id)) }} 
+                                                    {{ Form::open(array('url' => '/usuarios/' . $usuario->id, 'id' => 'frm'.$usuario->id)) }} 
                                                         {{ Form::hidden('_method', 'DELETE') }}
                                                             <a href="{{ URL::to('usuarios/' . $usuario->id . '/edit') }}" class="btn btn-success">Editar</a>
-                                                        {{ Form::submit('Eliminar', array('class' => 'btn btn-danger')) }}
+                                                        {{ Form::button('Eliminar', array('class' => 'btn btn-danger', 'onclick' => 'myFunction('.$usuario->id.')')) }}
                                                     {{ Form::close() }}
                                                     </td>
                                                 </tr>
@@ -62,7 +62,7 @@
         <!-- Datatables -->
         <script type="text/javascript" src="{{URL::asset('js/datatables/js/jquery.dataTables.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/datatables/tools/js/dataTables.tableTools.js')}}"></script>
-
+        <script type="text/javascript" src="{{URL::asset('js/functions.js')}}"></script>
         <script>
             $(document).ready(function () {
                 $('input.tableflat').iCheck({

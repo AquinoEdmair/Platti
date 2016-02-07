@@ -32,10 +32,10 @@
                                                     <td class=" ">{{$mesa->estatusmesas->descripcion}}</td>
                                                     <td class=" "> @if($mesa->asignacion==1) La mesa esta asignada a una tablet @else La mesa no esta asignada a una tablet @endif</td>
                                                     <td class=" last">
-                                                    {{ Form::open(array('url' => '/mesas/' . $mesa->id)) }} 
+                                                    {{ Form::open(array('url' => '/mesas/' . $mesa->id, 'id' => 'frm'.$mesa->id)) }} 
                                                         {{ Form::hidden('_method', 'DELETE') }}
                                                             <a href="{{ URL::to('mesas/' . $mesa->id . '/edit') }}" class="btn btn-success">Editar</a>
-                                                        {{ Form::submit('Eliminar', array('class' => 'btn btn-danger')) }}
+                                                        {{ Form::button('Eliminar', array('class' => 'btn btn-danger' , 'onclick' => 'myFunction('.$mesa->id.')')) }}
                                                     {{ Form::close() }}
                                                     </td>
                                                 </tr>
@@ -64,7 +64,7 @@
         <!-- Datatables -->
         <script type="text/javascript" src="{{URL::asset('js/datatables/js/jquery.dataTables.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/datatables/tools/js/dataTables.tableTools.js')}}"></script>
-
+        <script type="text/javascript" src="{{URL::asset('js/functions.js')}}"></script>
         <script>
             $(document).ready(function () {
                 $('input.tableflat').iCheck({

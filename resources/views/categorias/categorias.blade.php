@@ -62,6 +62,7 @@
         <!-- Datatables -->
         <script type="text/javascript" src="{{URL::asset('js/datatables/js/jquery.dataTables.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/datatables/tools/js/dataTables.tableTools.js')}}"></script>
+        <script type="text/javascript" src="{{URL::asset('js/functions.js')}}"></script>
 
         <script>
             $(document).ready(function () {
@@ -105,22 +106,7 @@
                         this.value = asInitVals[$("tfoot input").index(this)];
                     }
                 });
-            });
-            function myFunction(id){
-                swal({
-                  title: "Estas seguro de eliminar?",
-                  text: "el registro no podra recuperarse",
-                  type: "warning",
-                  showCancelButton: true,
-                  confirmButtonClass: "btn-danger",
-                  confirmButtonText: "Si, Eliminar",
-                  closeOnConfirm: true
-                },
-                function(){ 
-                    $( "#frm"+id).hide();  
-                    $( "#frm"+id).submit();
-                });
-            };
+            });            
         </script>
 
 @stop
