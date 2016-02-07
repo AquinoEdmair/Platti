@@ -272,4 +272,75 @@ class AdminController extends BaseController
         $Pedidos->save();     
         return redirect('pedidos');
     }
+
+    public function iniciarServicio(Request $request)
+    {
+        $mesa = Mesa::find($request->idMesa);
+        $mesa->estatusmesas_id = 2;
+        $mesa->save();
+
+        return \Response::json(['error' => 'false', 'msg' => $mesa, 'status' => '200'], 200);
+    }
+
+    public function agregarPedido(Request $request)
+    {
+        $mesa_id    = urldecode($request->idMesa);
+        $total      = urldecode($request->total);
+        $productos  = urldecode($request->productos);
+        $productos  = json_decode($productos);
+
+        $pedido = new Pedido();
+        $pedido->mesas_id           = $mesa_id;
+        $pedido->tipopagos_id       = 0;
+        $pedido->cajas_id           = 0;
+        $pedido->estatuspedidos_id  = 1;
+        $pedido->notificacion       = 1;
+        $pedido->total              = $total;
+        $pedido->activo             = 1;
+        $pedido->folio = md5(uniqid(rand(), true));
+        $pedido->save();
+
+        foreach ($productos as $producto) {
+            $det = new DetallePedido();
+            $det->productos_id  = $producto->producto_id;
+            $det->pedidos_id    = $pedido->id;
+            $det->observaciones = $producto->detalles;
+            $det->cantidad      = $producto->cantidad;
+            $det->activo        = 1;
+            $det->estatusdetallespedidos_id = 1;
+            $det->precio        = $producto->precio;
+            $det->subtotal      = $producto->precio * $producto->cantidad;
+            $det->save();
+        }
+
+        return \Response::json(['error' => 'false', 'msg' => $pedido->id, 'status' => '200'], 200);
+    }
+
+
+    public function agregarProductos(Request $request)
+    {
+        $pedido_id  = urldecode($request->idPedido);
+        $total      = urldecode($request->total);
+        $productos  = urldecode($request->productos);
+        $productos  = json_decode($productos);
+
+        $pedido = Pedido::find($pedido_id);
+        $pedido->total = $pedido->total + $total;
+        $pedido->save();
+
+        foreach ($productos as $producto) {
+            $det = new DetallePedido();
+            $det->productos_id  = $producto->producto_id;
+            $det->pedidos_id    = $pedido_id;
+            $det->observaciones = $producto->detalles;
+            $det->cantidad      = $producto->cantidad;
+            $det->activo        = 1;
+            $det->estatusdetallespedidos_id = 1;
+            $det->precio        = $producto->precio;
+            $det->subtotal      = $producto->precio * $producto->cantidad;
+            $det->save();
+        }
+
+        return \Response::json(['error' => 'false', 'msg' => "Se ha guardado correctamente", 'status' => '200'], 200);
+    }
 }
