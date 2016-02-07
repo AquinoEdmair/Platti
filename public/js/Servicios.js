@@ -43,13 +43,7 @@ function Modales()
           Modales();
        }  
     });
- var counter = 100;
  setInterval(function(){
- 	counter--
- 	if (counter === 0) {
- 		location.reload();
-	}
-
     $.ajax({
       type: 'GET',
       url: 'verMesasHtml',  
