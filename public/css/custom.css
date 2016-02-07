@@ -6370,7 +6370,7 @@ ul.notifications {
     width:120px;
     height:120px;
     border-radius:5px;
-    background-color: #FFFF00;
+    background-color: #5bc0de;
 }
 
 
@@ -6405,7 +6405,13 @@ div .swatch a i{
 }
 
 .pedidosLista{
-    width: 200px;
-    height: 50px;
-    margin-left: 370px;
+    width: 195px;
+    height: -50px;
+    margin-left: 368px;
+}
+
+.calcularCambio{
+    width: 355px;
+    height: -50px;
+    margin-left: 214px;
 }

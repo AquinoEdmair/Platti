@@ -180,17 +180,17 @@ class AdminController extends BaseController
             $html2 .='<ul class="list-group pedidosLista">'
             .'<li class="list-group-item">'
             .'<font color="black"><div class="text-right"><strong><td>Cuenta Total: &nbsp;</font></td></strong>' 
-            .'<font color="red" size="4px"><strong><td>$2500</font></td></strong>'
+            .'<font color="red" size="4px"><strong><td>$250000</font></td></strong>'
             .'</div>'
             .'</li>'
             .'</ul>'
-            .'<ul class="list-group">
-            <div class="input-group">
-      <input type="text" class="form-control" placeholder="Cantidad con la que pagaron...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Calcular Cambio</button>
-      </span>
-            </ul>'
+            .'<ul class="list-group calcularCambio">
+              <div class="input-group">
+              <input type="text" class="form-control" placeholder="Cantidad con la que pagaron...">
+              <span class="input-group-btn">
+              <button class="btn btn-info" type="button">Calcular Cambio</button>
+             </span>
+             </ul>'
             .'<form action="toPayByMesa" method="post">'       
                 .'<input type="hidden" name="id_mesa" value="'.$id.'">'
                 .'<input type="hidden" name="id_pedido" value="'.$mesa->pedido->id.'">'
