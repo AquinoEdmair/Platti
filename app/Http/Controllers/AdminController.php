@@ -28,7 +28,15 @@ class AdminController extends BaseController
                             if($servicio->estatusmesas_id==1)
                                $html .='<div class="swatch swatchDisponible">';
                             else if($servicio->estatusmesas_id==2) 
-                               $html .='<div class="swatch swatchOcupada">';   
+                            {
+                                if($servicio->pedido)
+                                    if($servicio->pedido->estatuspedidos_id == 2)
+                                        $html .='<div class="swatch swatchEspera">';
+                                    else
+                                        $html .='<div class="swatch swatchOcupada">';
+                                else
+                                        $html .='<div class="swatch swatchOcupada">';
+                            }   
                             $html .='<br>';
                                 $html .=$servicio->nombre;
                                 $html .='<br>';
