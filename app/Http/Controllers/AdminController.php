@@ -305,10 +305,17 @@ class AdminController extends BaseController
     public function iniciarServicio(Request $request)
     {
         $mesa = Mesa::find($request->idMesa);
-        $mesa->estatusmesas_id = 2;
-        $mesa->save();
 
-        return \Response::json(['error' => 'false', 'msg' => $mesa, 'status' => '200'], 200);
+        if($mesa->estatusmesas_id==1){
+            $mesa->estatusmesas_id = 2;
+            $mesa->save();
+            return \Response::json(['error' => 'false', 'msg' => $mesa, 'status' => '200'], 200);
+        }else{
+            return \Response::json(['error' => 'true', 'msg' => "La mesa no ha finalizado el servicio!", 'status' => '200'], 200);
+        }
+
+        
+
     }
 
     public function agregarPedido(Request $request)
