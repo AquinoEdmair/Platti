@@ -36,6 +36,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('obtieneMesas', 'AdminController@obtieneMesas');
 Route::post('actualizaMesa', 'AdminController@actualizaMesa');
 Route::post('iniciarServicio', 'AdminController@iniciarServicio');
+Route::post('finalizarServicio', 'AdminController@finalizarServicio');
 Route::get('obtieneCategorias', 'AdminController@obtieneCategorias');
 Route::get('nuevosPedidosmesalaravel/{id}', 'AdminController@nuevosPedidosmesalaravel');
 Route::get('pedidosMesalaravel/{id}', 'AdminController@pedidosMesalaravel');

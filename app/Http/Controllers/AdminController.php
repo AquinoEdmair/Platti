@@ -315,7 +315,16 @@ class AdminController extends BaseController
             return \Response::json(['error' => 'true', 'msg' => "La mesa no ha finalizado el servicio!", 'status' => '200'], 200);
         }
 
-        
+    }
+
+    public function finalizarServicio(Request $request)
+    {
+        $mesa = Mesa::find($request->idMesa);
+        $mesa->uuid         = "";
+        $mesa->asignacion   = 0;
+        $mesa->save();
+
+        return \Response::json(['error' => 'false', 'msg' => "La mesa ha finalizado el servicio!", 'status' => '200'], 200);
 
     }
 
