@@ -54,8 +54,8 @@
                                 </li>
                                 <li><a href="{{URL::to('pedidos')}}"><i class="glyphicon glyphicon-list-alt"></i> &nbsp; Pedidos</a>
                                 </li>
-                                <li><a href="{{URL::to('')}}"><i class="glyphicon glyphicon-folder-close"></i> &nbsp; Caja</a>
-                                </li>
+                                <!--<li><a href="{{URL::to('')}}"><i class="glyphicon glyphicon-folder-close"></i> &nbsp; Caja</a>
+                                </li>-->
                             </ul>
                         </div>
 
