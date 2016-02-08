@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AdminController@verMesas');
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +36,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('obtieneMesas', 'AdminController@obtieneMesas');
 Route::post('actualizaMesa', 'AdminController@actualizaMesa');
 Route::post('iniciarServicio', 'AdminController@iniciarServicio');
+Route::post('finalizarServicio', 'AdminController@finalizarServicio');
 Route::get('obtieneCategorias', 'AdminController@obtieneCategorias');
 Route::get('nuevosPedidosmesalaravel/{id}', 'AdminController@nuevosPedidosmesalaravel');
 Route::get('pedidosMesalaravel/{id}', 'AdminController@pedidosMesalaravel');
@@ -49,4 +48,5 @@ Route::get('cancelarPedidos/{id}', 'AdminController@cancelarPedidos');
 Route::post('agregarPedido', 'AdminController@agregarPedido');
 Route::post('agregarProductos', 'AdminController@agregarProductos');
 Route::post('terminarPedido', 'AdminController@terminarPedido');
+Route::get('notificacionesNuevosPedidos', 'AdminController@notificacionesNuevosPedidos');
 

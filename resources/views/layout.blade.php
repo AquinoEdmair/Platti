@@ -9,12 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Platti! | Aquisar</title>
-
     <!-- Bootstrap core CSS -->
-
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-
-
     <link rel="stylesheet" href="{{URL::asset('fonts/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/animate.min.css')}}">
     
@@ -22,31 +18,28 @@
     <link rel="stylesheet" href="{{URL::asset('css/custom.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/icheck/flat/green.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/datatables/tools/css/dataTables.tableTools.css')}}">
-
     <script type="text/javascript" src="{{URL::asset('js/jquery.min.js')}}"></script>
     <link rel="stylesheet" href="{{URL::asset('css/sweet-alert.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/notify.css')}}">
 
 </head>
 
 
 <body class="nav-md">
-
     <div class="container body">
-
         <div class="main_container">
 
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
+
                         <a href="index.html" class="site_title"><span>Platti!</span></a>
+
                     </div>
                     <div class="clearfix"></div>
-
-
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-
                         <div class="menu_section">
                             <ul class="nav side-menu">
                                 <li><a href="{{URL::to('categorias')}}"><i class="glyphicon glyphicon-th-list"></i> &nbsp; Categorías</a>
@@ -68,13 +61,12 @@
 
                     </div>
                     <!-- /sidebar menu -->
-
                 </div>
             </div>
 
             <!-- top navigation -->
             <div class="top_nav">
-
+                <div id="notify_h" ></div>                
                 <div class="nav_menu">
                     <nav class="" role="navigation">
                         <div class="nav toggle">
@@ -82,8 +74,8 @@
                         </div>
                     </nav>
                 </div>
-
             </div>
+
             <!-- /top navigation -->
 
             <!-- page content -->
@@ -91,7 +83,6 @@
             <!-- /page content -->
 
             </div>
-
         </div>
 
         <div id="custom_notifications" class="custom-notifications dsp_none">
@@ -103,8 +94,6 @@
 
 
         <script type="text/javascript" src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-
-
         <!-- chart js -->
         <script type="text/javascript" src="{{URL::asset('js/chartjs/chart.min.js')}}"></script>
         <!-- bootstrap progress js -->
@@ -114,7 +103,7 @@
         <script type="text/javascript" src="{{URL::asset('js/icheck/icheck.min.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/custom.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('js/sweet-alert.min.js')}}"></script>
-
+        <script type="text/javascript" src="{{URL::asset('js/Notificaciones.js')}}"></script>
         @yield('scripts')
 
 </body>
