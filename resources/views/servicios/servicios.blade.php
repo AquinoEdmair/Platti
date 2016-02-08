@@ -11,6 +11,14 @@
                             <div class="x_panel">
                                 <div class="x_title">
                                     <h2>Servicio de Mesas</h2>
+                                    <div class="BotonesStatus">
+                                    <br>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;                                  
+                                    <span class="label label-default">No asiganada</span>
+                                    <span class="label label-success">Disponible</span>
+                                    <span class="label label-danger Ocupada">Ocupada</span>
+                                    <span class="label label-warning">En Espera de Cobro</span>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">

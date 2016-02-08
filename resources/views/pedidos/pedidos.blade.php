@@ -14,7 +14,7 @@
                                 <div class="x_content">
                                     <table id="example" class="table table-striped responsive-utilities jambo_table">
                                         <thead>
-                                            <tr class="headings">      
+                                            <tr class="headings">       
                                                 <th>Follio </th>
                                                 <th>Mesa </th>
                                                 <th>Fecha Hora</th>
@@ -62,7 +62,9 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Pedidos</h4>
                       </div>
+                      <div class="modalScroll">
                       <div class="modal-body" id="pedidos_detalle">
+                      </div>
                         
                       </div>
                       <div class="modal-footer">

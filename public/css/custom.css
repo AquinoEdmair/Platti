@@ -1099,7 +1099,16 @@ h2 {
 }
 
 .x_title span {
-    color: #BDBDBD;
+    color: #fff;
+    position: relative;
+    top:  -14px; 
+    left: -20px;
+}
+
+.x_title span .label {
+    background-color: #000;
+    
+    margin-top: 5px;
 }
 
 .x_content {
