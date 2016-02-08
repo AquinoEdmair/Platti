@@ -407,10 +407,7 @@ class AdminController extends BaseController
     public function notificacionesNuevosPedidos()
     {           
         $detalle = DetallePedido::where('estatusdetallespedidos_id',1)->first();
-        $value = 0;
-        if ($detalle) {
-            $value =1;
-        }
+        $value = ($detalle) ? 1 : 0;
         return \Response::json(['error' => 'false', 'msg' => $value, 'status' => '200'], 200);
     }
 }
