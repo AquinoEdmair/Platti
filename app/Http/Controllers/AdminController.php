@@ -390,4 +390,8 @@ class AdminController extends BaseController
 
         return \Response::json(['error' => 'false', 'msg' => "Se finalizado correctamente", 'status' => '200'], 200);
     }
+    public function notificacionesNuevosPedidos()
+    {        
+        return \Response::json(['error' => 'false', 'msg' => "1", 'status' => '200'], 200);
+    }
 }
