@@ -190,17 +190,6 @@ class AdminController extends BaseController
             .'</div>'
             .'</li>'
             .'</ul>'
-            .'<ul class="nav nav-tabs nav-justified">
-              <li role="presentation" class="active" id="login-form-link"><a href="#">Pago en Efectivo</a></li>
-              <li role="presentation"><a href="#">Pago con Tarjeta</a></li>
-              </ul>'
-            .'<ul class="list-group calcularCambio">
-              <div class="input-group">
-              <input type="text" class="form-control" placeholder="Cantidad con la que pagaron...">
-              <span class="input-group-btn">
-              <button class="btn btn-info" type="button">Calcular Cambio</button>
-             </span>
-             </ul>'
             .'<form action="toPayByMesa" method="post">'       
                 .'<input type="hidden" name="id_mesa" value="'.$id.'">'
                 .'<input type="hidden" name="id_pedido" value="'.$mesa->pedido->id.'">'
