@@ -8,6 +8,7 @@ use App\Categoria;
 use App\Pedido;
 use App\DetallePedido;
 use Illuminate\Http\Request;
+use DateTime;
 
 class AdminController extends BaseController
 {
@@ -325,6 +326,9 @@ class AdminController extends BaseController
         $productos  = urldecode($request->productos);
         $productos  = json_decode($productos);
 
+        $dt = new DateTime();
+        $folio = $dt->format('YmdHis');
+
         $pedido = new Pedido();
         $pedido->mesas_id           = $mesa_id;
         $pedido->tipopagos_id       = 0;
@@ -333,7 +337,7 @@ class AdminController extends BaseController
         $pedido->notificacion       = 1;
         $pedido->total              = $total;
         $pedido->activo             = 1;
-        $pedido->folio = md5(uniqid(rand(), true));
+        $pedido->folio              = $folio;
         $pedido->save();
 
         foreach ($productos as $producto) {
